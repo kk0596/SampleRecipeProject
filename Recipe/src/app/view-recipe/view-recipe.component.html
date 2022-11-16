@@ -1,0 +1,27 @@
+
+<!-- <ul>
+    <li><a class="active" href="#menu">Menu</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">About</a></li>
+</ul> -->
+<div class="row">
+<div class="col-md-12">
+    <div class="card"  *ngFor="let data of recipeList" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                <img src={{data.image}} alt="" style="width:50%" (click)="onCategoryClick()">
+                </div>
+                <div class="col-md-2">
+                    <!-- <span class="test float-right"></span> -->
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon">&#x270f;</span>
+                </div>
+            </div>
+          <h4 class="mt-2"><b>{{data.name}}</b></h4>
+          <p>{{data.quotes}}</p>
+        </div>
+      </div>
+    </div>
+</div>
