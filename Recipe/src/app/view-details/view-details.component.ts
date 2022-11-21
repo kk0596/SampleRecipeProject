@@ -128,28 +128,66 @@ export class ViewDetailsComponent implements OnInit {
     this.route.navigateByUrl("/main")
   }
 
-  // getData(){
-  //   let sample_data = [];
-  //   this.loadData(sample_data);
-  // }
+  getData(){
+    let sample_data:[] = [];
+    this.loadData(sample_data);
+  }
 
-  // loadData(addReceipe:any){
-  //    this.ingredientNanList = [...this.ingredientNanList, ...addReceipe];
-  // }
+  loadData(addReceipe:any){
+     this.ingredientList = [...this.ingredientList, ...addReceipe];
+     this.ingredientMuttonList  = [...this.ingredientMuttonList, ...addReceipe];
+      this.ingredientNanList  = [...this.ingredientNanList, ...addReceipe];
+      this.ingredientLemonMintList  = [...this.ingredientLemonMintList, ...addReceipe];
+      this.ingredientChilliChickenList  = [...this.ingredientChilliChickenList, ...addReceipe];
+      this.ingredientTandooriList  = [...this.ingredientTandooriList, ...addReceipe];
+  }
 
   addTable() {
     const obj = {
-      name: '',
-      quantity: ''
+      name: ' Fried onion',
+      quantity: '1 cub'
     }
-    this.ingredientTandooriList.push(obj)
+    const obj2 = {
+      name: ' Fried onion',
+      quantity: '1 cub'
+    }
+    const obj3 = {
+      name: ' Butter ',
+      quantity: '100 g'
+    }
+    const obj4 = {
+      name: ' Ghee ',
+      quantity: '50 g'
+    }
+    const obj5 ={
+      name: 'Soya Sauce',
+      quantity: '1.5 tps'
+    }
+    const obj6 ={
+      name: 'Honey',
+      quantity: '2 tps'
+    }
+    
+    this.ingredientList.push(obj);
+    this.ingredientMuttonList.push(obj2);
+    this.ingredientNanList.push(obj3);
+    this.ingredientChilliChickenList.push(obj4);
+    this.ingredientTandooriList.push(obj5);
+    this.ingredientLemonMintList.push(obj6);
+    
   }
+  
   
   deleteRow(x:any){
     var delBtn = confirm(" Do you want to delete ?");
     if ( delBtn == true ) {
+      this.ingredientList.splice(x,1);
+      this.ingredientMuttonList.splice(x,1);
+      this.ingredientNanList.splice(x,1);
+      this.ingredientLemonMintList.splice(x,1);
+      this.ingredientChilliChickenList.splice(x,1);
       this.ingredientTandooriList.splice(x, 1 );
     }
+  }
 
-}
 }
